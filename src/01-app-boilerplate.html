@@ -40,7 +40,7 @@
 </head>
 <body>
 
-  <a id="go-back" href="/">Go Back</a>
+  <!-- <a id="go-back" href="/">Go Back</a> -->
 
   <div id="container">
     <h1>01 - App Boilerplate</h1>
@@ -48,33 +48,92 @@
   </div>
 
   <script>
+const CANVAS_WIDTH = 512;
+const CANVAS_HEIGHT = 512;
+
+const canvas = document.getElementById('canvas');
+
+canvas.width = CANVAS_WIDTH * devicePixelRatio;
+canvas.height = CANVAS_HEIGHT * devicePixelRatio;
+
+canvas.style.setProperty('width',`${CANVAS_WIDTH}px`)
+canvas.style.setProperty('height',`${CANVAS_HEIGHT}px`)
+
+canvas.getContext('2d');
+canvas.getContext('webgl');
+canvas.getContext('webgl2');
+canvas.getContext('gpu');
+
+const ctx = canvas.getContext('2d');
+
+drawFrame(ts)
+
+function drawFrame(ts){
+ts /= 1000
+
+  ctx.moveTo(100,200);
+ctx.lineTo(500,500);
+ctx.stroke()
+
+requestAnimationFrame(drawFrame)
+}
+
+// const CANVAS_WIDTH = 512;
+// const CANVAS_HEIGHT = 512;
+
+
+// const canvas = document.getElementById('canvas');
+
+// canvas.width = CANVAS_WIDTH * devicePixelRatio
+// canvas.height = CANVAS_HEIGHT * devicePixelRatio;
+// const ctx = canvas.getContext('2d')
+
+// canvas.style.setProperty('width',`${CANVAS_WIDTH}`)
+// canvas.style.setProperty('height',`${CANVAS_HEIGHT}`)
+
+// // drawFrame()
+// requestAnimationFrame(drawFrame)
+
+// function drawFrame(ts){
+//   // console.log(timeSinceFirstSchedule);
+// ts/=1000
+  
+//   ctx.moveTo(100,100)
+// ctx.lineTo(100,200)
+// ctx.stroke()
+
+// requestAnimationFrame(drawFrame)
+// }
+// canvas.getContext('webgl')
+// canvas.getContext('webgl2')
+// canvas.getContext('gpu')
 
     // Initialisation
-    const CANVAS_WIDTH = 512
-    const CANVAS_HEIGHT = 512
+    // const CANVAS_WIDTH = 512
+    // const CANVAS_HEIGHT = 512
 
-    const canvas = document.getElementById('canvas')
+    // const canvas = document.getElementById('canvas')
 
-    canvas.width = CANVAS_WIDTH * devicePixelRatio
-    canvas.height = CANVAS_HEIGHT * devicePixelRatio
+    // canvas.width = CANVAS_WIDTH * devicePixelRatio
+    // canvas.height = CANVAS_HEIGHT * devicePixelRatio
 
-    canvas.style.setProperty('width', `${CANVAS_WIDTH}px`)
-    canvas.style.setProperty('height', `${CANVAS_HEIGHT}px`)
+    // canvas.style.setProperty('width', `${CANVAS_WIDTH}px`)
+    // canvas.style.setProperty('height', `${CANVAS_HEIGHT}px`)
 
-    const ctx = canvas.getContext('2d') // Canvas2DRenderingContext
+    // const ctx = canvas.getContext('2d') // Canvas2DRenderingContext
 
-    // Update loop
-    requestAnimationFrame(drawFrame)
+    // // Update loop
+    // requestAnimationFrame(drawFrame)
 
-    function drawFrame (ts) {
-      ts /= 1000
+    // function drawFrame (ts) {
+    //   ts /= 1000
       
-      ctx.moveTo(100, 100)
-      ctx.lineTo(200, 200)
-      ctx.stroke()
+    //   ctx.moveTo(100, 100)
+    //   ctx.lineTo(200, 200)
+    //   ctx.stroke()
 
-      requestAnimationFrame(drawFrame)
-    }
+    //   requestAnimationFrame(drawFrame)
+    // }
 
   </script>
   
