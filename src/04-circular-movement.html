@@ -88,24 +88,26 @@
       ctx.stroke()
 
       ctx.fillStyle = 'orange'
-
-      const angle = ts * 2
-
-      const moveX = circleX - Math.cos(angle) * circleRadius
-      const moveY = circleY - Math.sin(angle) * circleRadius
-
-      ctx.beginPath()
-      ctx.arc(moveX, moveY, 20 + Math.cos(ts * 2) * 10, circleStartAngle, circleEndAngle, circleCounterclockwise)
+ctx.arc()
       ctx.fill()
+      ctx(moveX,moveY)
+      // const angle = ts * 2
 
-      const moveX2 = circleX - Math.cos(angle + Math.PI) * circleRadius
-      const moveY2 = circleY - Math.sin(angle + Math.PI) * circleRadius
-      ctx.fillStyle = 'blue'
-      ctx.beginPath()
-      ctx.arc(moveX2, moveY2, 30 + Math.cos(ts * 2) * 20, circleStartAngle, circleEndAngle, circleCounterclockwise)
-      ctx.fill()
+      // const moveX = circleX - Math.cos(angle) * circleRadius
+      // const moveY = circleY - Math.sin(angle) * circleRadius
 
-      requestAnimationFrame(drawFrame)
+      // ctx.beginPath()
+      // ctx.arc(moveX, moveY, 20 + Math.cos(ts * 2) * 10, circleStartAngle, circleEndAngle, circleCounterclockwise)
+      // ctx.fill()
+
+      // const moveX2 = circleX - Math.cos(angle + Math.PI) * circleRadius
+      // const moveY2 = circleY - Math.sin(angle + Math.PI) * circleRadius
+      // ctx.fillStyle = 'blue'
+      // ctx.beginPath()
+      // ctx.arc(moveX2, moveY2, 30 + Math.cos(ts * 2) * 20, circleStartAngle, circleEndAngle, circleCounterclockwise)
+      // ctx.fill()
+
+      // requestAnimationFrame(drawFrame)
     }
 
   </script>
